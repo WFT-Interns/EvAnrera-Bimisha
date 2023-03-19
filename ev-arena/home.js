@@ -1,35 +1,48 @@
-const slider = document.querySelector('.slider');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let slideIndex = 0;
+let slideIndex = 1;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+function plusSlides(n) {
+  showSlides(slideIndex + n);
+}
 
-// Set the first slide to be shown
-showSlides();
-
-// Previous slide button click event
-prevBtn.addEventListener('click', () => {
-  slideIndex--;
-  showSlides();
-});
-
-// Next slide button click event
-nextBtn.addEventListener('click', () => {
-  slideIndex++;
-  showSlides();
-});
-
-// Function to show the slides
-function showSlides() {
-  const slides = slider.querySelectorAll('img');
-  // Reset slideIndex if it goes out of bounds
-  if (slideIndex >= slides.length) slideIndex = 0;
-  if (slideIndex < 0) slideIndex = slides.length - 1;
-  // Hide all slides except for the current one
-  for (let i = 0; i < slides.length; i++) {
-    if (i === slideIndex) {
-      slides[i].style.display = 'block';
-    } else {
-      slides[i].style.display = 'none';
-    }
+function currentSlide(n) {
+  if(n!=slideIndex){
+    showSlides(n);
   }
+}
+
+function showSlides(n) {
+  let i;
+  if (n > slides.length) {n= 1}
+  if (n < 1) {n = slides.length}
+  // for (i = 0; i < slides.length; i++) {
+  //   slides[i].style.display = "none";  
+  // }
+  // for (i = 0; i < dots.length; i++) {
+  //   dots[i].className = dots[i].className.replace(" active", "");
+  // }
+  if(n<slideIndex){
+    slides[n-1].className += " slide-left-current";
+    slides[slideIndex-1].className += " slide-left-prev";
+    slides[n-1].style.display = "block";  
+    dots[n-1].className += " active";
+    
+  }
+  else{
+    slides[n-1].className += " slide-right-current";
+    slides[slideIndex-1].className += " slide-right-prev";
+    slides[n-1].style.display = "block";  
+    dots[n-1].className += " active";
+  }
+  setTimeout(() => {
+    // 4 second delay here before running next line
+  slides[slideIndex-1].style.display = "none"; 
+  dots[slideIndex-1].className = dots[slideIndex-1].className.replace(" active", "");
+  slides[slideIndex-1].className = "mySlides";
+  slides[n-1].className = "mySlides";
+  slideIndex = n;
+  }, 1500)
+ 
 }

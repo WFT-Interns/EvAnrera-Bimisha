@@ -1,0 +1,199 @@
+@import url('https://fonts.cdnfonts.com/css/gotham');
+                
+body{
+    font-family: 'Gotham', sans-serif;
+    margin: 0px;
+    padding: 0;
+}
+/*---------------------Video content-------------------*/
+.video-content{
+    margin-top: 60px;
+}
+.main-video{  
+    height: 55vw;
+    width: 100%;
+    background-size: cover;
+    filter:brightness(50%);
+}
+
+.video-text{
+    color: white;
+    position: absolute;
+    z-index:1;
+    width: 25%;
+    top: 40%;
+    left: 500px;
+    right: 500px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.slogan{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+font-size: 40px;
+font-weight:bolder;
+}
+#and{
+color: #3A9B61;
+font-size: xx-large;
+align-items: center;
+}
+.slogan2{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+.button{
+    margin: 15px;
+    padding: 5px;
+    width: 210px;
+    height: 40px;
+    background-color: #3a9b6177;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.button:hover {
+    font-size:medium;
+  }
+/*---------------------SLIDER-------------------*/
+.slider-container {
+  margin: 15px;
+  position: relative;
+}
+.slider-heading{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: large;
+}
+.vehicles-optionbar{
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+  margin: 20px;
+}
+.vehicles-optionbar a{
+  text-decoration: none;
+  color: black;  
+  font-size:small;
+  font-weight:500;
+}
+.vehicles-optionbar a:hover {
+  color: #3A9B61;
+}
+/* slider bar */
+.mySlides{
+  display: none;
+  position: absolute;
+  top: 0px;
+}
+.mySlides img{
+width: 100%;
+}
+.slider-nextprev-container{
+  position: absolute;
+  top: 50%;
+  padding: 0px 20px;
+  color: white;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 10px;
+  user-select: none;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.slider-dot-container{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  top: -70px;
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: white;
+}
+
+/* sliding animation */
+.slide-left-current {
+  animation-name: slide-left-current;
+  animation-duration: 1.5s;
+  
+}
+.slide-left-prev {
+  animation-name: slide-left-prev;
+  animation-duration: 1.5s;
+
+}
+.slide-right-current {
+  animation-name: slide-right-current;
+  animation-duration: 1.5s;
+  
+}
+.slide-right-prev {
+  animation-name: slide-right-prev;
+  animation-duration: 1.5s;
+  
+}
+@keyframes slide-left-prev{
+  from {left: 0px} 
+  to {left: -1000px}
+}
+@keyframes slide-left-current{
+  from {left: 1000px}
+  to {left: 0px}
+}
+@keyframes slide-right-prev{
+  from {right: 0px} 
+  to {right: 1000px}
+}
+@keyframes slide-right-current{
+  from {right: -1000px}
+  to {right: 0px}
+}
+/* ------------------------- */
+.compare-button{
+margin: 10px;
+text-align: center;
+border-style: solid;
+border-color: black;
+border-radius: 5px;
+padding: 10px;
+position: relative;
+left: 590px;
+background-color: white;
+}
+
+
