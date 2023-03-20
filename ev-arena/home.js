@@ -1,48 +1,49 @@
+let isClicked = false;
 let slideIndex = 1;
 let slides = document.getElementsByClassName("mySlides");
 let dots = document.getElementsByClassName("dot");
 slides[slideIndex-1].style.display = "block";
 dots[slideIndex-1].className += " active";
-function plusSlides(n) {
-  showSlides(slideIndex + n);
+
+function plusSlides(nextSlide) {
+  nextSlide += slideIndex;
+  showSlides(nextSlide);
 }
 
-function currentSlide(n) {
-  if(n!=slideIndex){
-    showSlides(n);
+function currentSlide(nextSlide) {
+  if(nextSlide!=slideIndex){
+    showSlides(nextSlide);
   }
 }
 
-function showSlides(n) {
-  let i;
-  if (n > slides.length) {n= 1}
-  if (n < 1) {n = slides.length}
-  // for (i = 0; i < slides.length; i++) {
-  //   slides[i].style.display = "none";  
-  // }
-  // for (i = 0; i < dots.length; i++) {
-  //   dots[i].className = dots[i].className.replace(" active", "");
-  // }
-  if(n<slideIndex){
-    slides[n-1].className += " slide-left-current";
-    slides[slideIndex-1].className += " slide-left-prev";
-    slides[n-1].style.display = "block";  
-    dots[n-1].className += " active";
-    
+function showSlides(nextSlide) {
+  if (!isClicked) {
+    isClicked = true;
+    let slide_right = nextSlide < slideIndex;
+    if (nextSlide > slides.length) {
+      nextSlide= 1
+    } else if (nextSlide < 1) {
+      nextSlide = slides.length
+    }
+
+    slides[nextSlide-1].style.display = "block";
+    dots[nextSlide-1].className += " active";
+
+    if(slide_right) {
+      slides[slideIndex-1].className += " slide-right-prev";
+      slides[nextSlide-1].className += " slide-right-current";
+    } else {
+      slides[slideIndex-1].className += " slide-left-prev";
+      slides[nextSlide-1].className += " slide-left-current";
+    }
+    setTimeout(() => {
+      // 4 second delay here before running next line
+      slides[slideIndex-1].style.display = "none"; 
+      dots[slideIndex-1].className = dots[slideIndex-1].className.replace(" active", "");
+      slides[slideIndex-1].className = "mySlides";
+      slides[nextSlide-1].className = "mySlides";
+      slideIndex = nextSlide;
+      isClicked = false;
+    }, 1500)
   }
-  else{
-    slides[n-1].className += " slide-right-current";
-    slides[slideIndex-1].className += " slide-right-prev";
-    slides[n-1].style.display = "block";  
-    dots[n-1].className += " active";
-  }
-  setTimeout(() => {
-    // 4 second delay here before running next line
-  slides[slideIndex-1].style.display = "none"; 
-  dots[slideIndex-1].className = dots[slideIndex-1].className.replace(" active", "");
-  slides[slideIndex-1].className = "mySlides";
-  slides[n-1].className = "mySlides";
-  slideIndex = n;
-  }, 1500)
- 
 }
