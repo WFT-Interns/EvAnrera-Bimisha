@@ -1,0 +1,76 @@
+@import url('https://fonts.cdnfonts.com/css/gotham');
+
+.main-body-container{
+    width: 100%;
+    position: absolute;
+    top: 20%;
+}
+.vehicles-option-button{
+    width: calc(100%-800px);
+    margin: 0px 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.vehicles-option-button button{
+    color: black;
+    border: none;
+    width: 160px;
+}
+/* car-container */
+.car-container{
+    width: 865px;
+    position: absolute;
+    top: 25%;
+    margin: 0px 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.car-selection{
+    margin-top: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.ev-brandname, .Ev-date, .Ev-range{
+    width: 30%;
+}
+.ev-brandname select, .Ev-range select{
+    width: 100%;
+}
+.Ev-date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Range-and-search-container{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.priceRange{
+    width: 100%; /* Full-width */
+    height: 10px; /* Specified height */
+    background: black;
+    border: 1px solid black;                                                                  
+    border-radius: 10px;
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s; 
+}
+.priceRange:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+.priceRange::-moz-range-thumb {
+    width: 10px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+
+
