@@ -19,10 +19,10 @@
 }
 /* car-container */
 .car-container{
-    width: 865px;
+    width: 700px;
     position: absolute;
-    top: 25%;
-    margin: 0px 200px;
+    top: 95%;
+    margin: 0px 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,27 +30,49 @@
     border-radius: 10px;
 }
 .car-selection{
-    margin-top: 10px;
+    margin: 15px 0px;
     width: 80%;
     height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+     align-items: center;
 }
-.ev-brandname, .Ev-date, .Ev-range{
+/* ---------------dropdown --------------*/
+.ev-brandname, .ev-range, .ev-date{
     width: 30%;
+    height: 40px;
+    overflow: hidden;
 }
-.ev-brandname select, .Ev-range select{
-    width: 100%;
+.ev-select{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
     height: 35px;
+    width: 100%;
+    appearance: none;
+    background-image: url(/assets/arrow-dropdown.png);
+    background-repeat: no-repeat;
+    background-position: 145px;
+    background-size: 15px;
 }
-.Ev-date{
+.ev-date{
     display: flex;
+    width: 35%;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: -2px;
 }
-.from-date, .to-date{
+.ev-date select{
+    background-position: 60px;
+    margin: 0px 5px;
 }
+  
+
+/* ------------------------------ */
+
 .Range-and-search-container{
     width: 70%;
     display: flex;
@@ -78,3 +100,6 @@
   
 
 
+
+  
+  

@@ -46,7 +46,7 @@
         <div class="car-container">
             <div class="car-selection">
                 <div class="ev-brandname"> <!-- ev-brandname -->
-                    <select name="cars" id="cars">
+                    <select name="cars" id="cars-brand" class="ev-select">
                         <option hidden selected>EV-Brand Name</option>
                         <option value="Tesla">Tesla</option>
                         <option value="volvo">Volvo</option>
@@ -55,8 +55,8 @@
                         <option value="audi">Audi</option>
                     </select>
                 </div>
-                <div class="Ev-range"> <!-- ev-range -->
-                    <select name="Range" id="cars-Range">
+                <div class="ev-range"> <!-- ev-range -->
+                    <select name="Range" id="cars-Range" class="ev-select">
                         <option hidden selected>EV-Range</option>
                         <option value="">95-195</option>
                         <option value="">195-395</option>
@@ -65,10 +65,24 @@
                         <option value="">595-695</option>
                     </select>
                     </div>
-                <div class="Ev-date">
-                    <input type="date" class="from-date" id="from-date">
-                    to
-                    <input type="date" class="to-date" id="from-date">
+                <div class="ev-date">
+                    <select name="From-year" id="start-date" class="ev-select">
+                        <option hidden selected>2019</option>
+                        <option value="">2019</option>
+                        <option value="">2020</option>
+                        <option value="">2021</option>
+                        <option value="">2022</option>
+                        <option value="">2023</option>
+                    </select>
+                    <p>to</p>
+                    <select name="From-year" id="end-date" class="ev-select">
+                        <option hidden selected>2023</option>
+                        <option value="">2019</option>
+                        <option value="">2020</option>
+                        <option value="">2021</option>
+                        <option value="">2022</option>
+                        <option value="">2023</option>
+                    </select>
                 </div>
             </div>
             <div class="Range-and-search-container"><!--range and search-->
@@ -116,5 +130,6 @@
         </div>
     </div>
     <!-- ------------------- -->
+    <script src="js/dropdown.js"></script>
 </body>
 </html>
