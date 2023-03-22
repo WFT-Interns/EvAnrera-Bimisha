@@ -37,16 +37,17 @@
 
     <!--  -->
     <div class="main-body-container">
+        <!-- open form -->
         <div class="vehicles-option-button">
-            <button>Car</button>
-            <button>Bike</button>
-            <button>Scooter</button>
+            <button onclick="showFilter('car')">Car</button>
+            <button onclick="showFilter('bike')">Bike</button>
+            <button onclick="showFilter('scooter')">Scooter</button>
         </div>
    
-        <div class="car-container">
-            <div class="car-selection">
+        <div class="vehicle-container">
+            <div class="vehicle-selection">
                 <div class="ev-brandname"> <!-- ev-brandname -->
-                    <select name="cars" id="cars-brand" class="ev-select">
+                    <select name="cars" id="cars-brand" class="ev-select vehicleType">
                         <option hidden selected>EV-Brand Name</option>
                         <option value="Tesla">Tesla</option>
                         <option value="volvo">Volvo</option>
@@ -54,9 +55,24 @@
                         <option value="mercedes">Mercedes</option>
                         <option value="audi">Audi</option>
                     </select>
+                    <select name="bikes" id="bike-brand" class="ev-select vehicleType">
+                        <option hidden selected>EV-Brand Name</option>
+                        <option value="Rad Power Bikes">Rad Power Bikes</option>
+                        <option value="Lectric eBikes">Lectric eBikes</option>
+                        <option value="Ride1Up">Ride1Up</option>
+                        <option value="Aventon">Aventon</option>
+                    </select>
+                    <select name="scooter" id="scooter-brand" class="ev-select vehicleType">
+                        <option hidden selected>EV-Brand Name</option>
+                        <option value="River Indie">River Indie</option>
+                        <option value="Ampere Magnus">Ampere Magnus</option>
+                        <option value="Komaki XGT">Komaki XGT</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
                 </div>
                 <div class="ev-range"> <!-- ev-range -->
-                    <select name="Range" id="cars-Range" class="ev-select">
+                    <select name="Range" id="cars-Range" class="ev-select vehicleRange">
                         <option hidden selected>EV-Range</option>
                         <option value="">95-195</option>
                         <option value="">195-395</option>
@@ -64,7 +80,22 @@
                         <option value="">495-595</option>
                         <option value="">595-695</option>
                     </select>
-                    </div>
+                    <select name="Range" id="bike-Range" class="ev-select vehicleRange">
+                        <option hidden selected>EV-Range</option>
+                        <option value="">20-40</option>
+                        <option value="">40-60</option>
+                        <option value="">60-80</option>
+                        <option value="">80-100</option>
+                        <option value="">100-120</option>
+                    </select>
+                    <select name="Range" id="scooter-Range" class="ev-select vehicleRange">
+                        <option hidden selected>EV-Range</option>
+                        <option value="">20-40</option>
+                        <option value="">40-60</option>
+                        <option value="">60-80</option>
+                        <option value="">80-100</option>
+                    </select>
+                </div>
                 <div class="ev-date">
                     <select name="From-year" id="start-date" class="ev-select">
                         <option hidden selected>2019</option>
@@ -97,6 +128,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 
@@ -132,6 +164,7 @@
         </div>
     </div>
     <!-- ------------------- -->
-    <script src="js/priceRange.js"></script>
+    <script src="Js/priceRange.js"></script>
+    <script src="Js/vehicleFilter.js"></script>
 </body>
 </html>

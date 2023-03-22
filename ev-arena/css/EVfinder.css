@@ -18,7 +18,7 @@
     width: 160px;
 }
 /* car-container */
-.car-container{
+.vehicle-container{
     width: 700px;
     position: absolute;
     top: 95%;
@@ -29,7 +29,7 @@
     border: 1px solid black;
     border-radius: 10px;
 }
-.car-selection{
+.vehicle-selection{
     margin: 15px 0px;
     width: 80%;
     height: 40px;
